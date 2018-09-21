@@ -19,7 +19,13 @@ class Auth extends Component {
             picture: undefined,
             error: "",
             username: "",
-            role: "volunteer"
+            role: "Volunteer",
+            car: "",
+            availability: "",
+            category: "",
+            city: "",
+            address: "",
+            cuisine: ""
         };
 
         this._handleInputChange = this._handleInputChange.bind(this);
@@ -41,6 +47,12 @@ class Auth extends Component {
                             username={this.state.username}
                             error={this.state.error}
                             sign={this._sign}
+                            address={this.state.address}
+                            city={this.state.city}
+                            availability={this.state.availability}
+                            car={this.state.car}
+                            category={this.state.category}
+                            cuisine={this.state.cuisine}
                         />
                     )}
                 />
@@ -86,7 +98,13 @@ class Auth extends Component {
                 email: this.state.email,
                 password: this.state.password,
                 username: this.state.username,
-                role: this.state.role
+                role: this.state.role,
+                car: this.state.car,
+                availability: this.state.availability,
+                cuisine: this.state.cuisine,
+                category: this.state.category,
+                city: this.state.city,
+                address: this.state.address
             },
             pictureDeclaration
         )

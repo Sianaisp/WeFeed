@@ -7,8 +7,19 @@ const config = require("../../config");
 const upload = require("../../utils/upload");
 
 router.post("/sign-up", (req, res) => {
-    // rajouter les différents champs
-    const { email, password, role, username, address, city, website } = req.body;
+    const {
+        email,
+        password,
+        role,
+        username,
+        address,
+        city,
+        car,
+        cuisine,
+        availability,
+        category
+    } = req.body;
+    console.log("req.body:", req.body);
 
     if (!email || !password) res.status(400).send({ error: "Missing Credentials." });
 
@@ -21,7 +32,6 @@ router.post("/sign-up", (req, res) => {
         .then(pictureUrl => {
             const hashedPassword = bcrypt.hashSync(password, 10);
             return new User({
-                // rajouter les différents champs
                 email,
                 password: hashedPassword,
                 profilePicture: pictureUrl,
@@ -29,7 +39,11 @@ router.post("/sign-up", (req, res) => {
                 username,
                 address,
                 city,
-                website
+
+                cuisine,
+                car,
+                availability,
+                category
             }).save();
         })
         .then(user => {
@@ -39,7 +53,13 @@ router.post("/sign-up", (req, res) => {
                     email: user.email,
                     profilePicture: user.profilePicture,
                     role: user.role,
-                    username: user.username
+                    username: user.username,
+                    availability: user.availability,
+                    address: user.address,
+                    city: user.city,
+                    cuisine: user.cuisine,
+                    category: user.category,
+                    car: user.car
                 },
                 config.SECRET_JWT_PASSPHRASE
             );

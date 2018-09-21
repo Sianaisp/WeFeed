@@ -21,18 +21,6 @@ router.use((req, res) => {
     res.status(404).send({ error: "not-found" });
 });
 
-router.get("/volunteer_profile", (req, res, next) => {
-    res.render("volunteer_profile", { user: req.user });
-});
-
-router.get("/donations-page", (req, res, next) => {
-    res.render("donations-page", { user: req.user });
-});
-
-router.get("/charity_profile", (req, res, next) => {
-    res.render("charity_profile", { user: req.user });
-});
-
 router.get("/donator_profile", (req, res, next) => {
     res.render("donator_profile", { user: req.user });
 });

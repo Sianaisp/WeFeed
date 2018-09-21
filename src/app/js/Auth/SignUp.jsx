@@ -6,22 +6,64 @@ class SignUp extends React.Component {
         this.props.handleInputChange("email", "");
         this.props.handleInputChange("password", "");
         this.props.handleInputChange("username", "");
+        this.props.handleInputChange("car", "");
+        this.props.handleInputChange("category", "");
+        this.props.handleInputChange("cuisine", "");
+        this.props.handleInputChange("availability", "");
+        this.props.handleInputChange("address", "");
+        this.props.handleInputChange("city", "");
     }
 
     render() {
-        let form;
-        // let specific;
-        // specific = (
-        //     <input
-        //         type="text"
-        //         value={this.props.volunteer.car}
-        //         onChange={evt => this.props.handleInputChange("car", evt.target.value)}
-        //         className="input"
-        //         placeholder="Car"
-        //     />
-        // );
+        let additionalInfo;
 
-        form = (
+        if (this.props.role === "Volunteer") {
+            additionalInfo = (
+                <div>
+                    <input
+                        type="text"
+                        value={this.props.car}
+                        onChange={evt => this.props.handleInputChange("car", evt.target.value)}
+                        className="input"
+                        placeholder="Do you have a car?"
+                    />
+                    <br />
+                    <input
+                        type="text"
+                        value={this.props.availability}
+                        onChange={evt => this.props.handleInputChange("availability", evt.target.value)}
+                        className="input"
+                        placeholder="Availability"
+                    />
+                </div>
+            );
+        } else if (this.props.role === "Charity") {
+            additionalInfo = (
+                <div>
+                    <input
+                        type="text"
+                        value={this.props.cuisine}
+                        onChange={evt => this.props.handleInputChange("cuisine", evt.target.value)}
+                        className="input"
+                        placeholder="Cuisine"
+                    />
+                </div>
+            );
+        } else if (this.props.role === "Donator") {
+            additionalInfo = (
+                <div>
+                    <input
+                        type="text"
+                        value={this.props.category}
+                        onChange={evt => this.props.handleInputChange("category", evt.target.value)}
+                        className="input"
+                        placeholder="Category"
+                    />
+                </div>
+            );
+        }
+
+        return (
             <div className="container">
                 <h1>SignUp</h1>
 
@@ -55,7 +97,22 @@ class SignUp extends React.Component {
                 />
                 <br />
                 <br />
-
+                <input
+                    type="text"
+                    value={this.props.address}
+                    onChange={evt => this.props.handleInputChange("address", evt.target.value)}
+                    className="input"
+                    placeholder="Address"
+                />
+                <br />
+                <br />
+                <input
+                    type="text"
+                    value={this.props.city}
+                    onChange={evt => this.props.handleInputChange("city", evt.target.value)}
+                    className="input"
+                    placeholder="City"
+                />
                 <br />
                 <br />
                 <input
@@ -72,30 +129,32 @@ class SignUp extends React.Component {
                 <label htmlFor="">Volunteer</label>
                 <input
                     type="radio"
-                    name="volunteer"
-                    checked={this.props.role === "volunteer"}
-                    onChange={() => this.props.handleInputChange("role", "volunteer")}
+                    name="Volunteer"
+                    checked={this.props.role === "Volunteer"}
+                    onChange={() => this.props.handleInputChange("role", "Volunteer")}
                     className="input"
                 />
                 <label htmlFor="">Donator</label>
                 <input
                     type="radio"
-                    name="donator"
-                    checked={this.props.role === "donator"}
-                    onChange={() => this.props.handleInputChange("role", "donator")}
+                    name="Donator"
+                    checked={this.props.role === "Donator"}
+                    onChange={() => this.props.handleInputChange("role", "Donator")}
                     className="input"
                 />
                 <label htmlFor="">Charity</label>
                 <input
                     type="radio"
-                    name="charity"
-                    checked={this.props.role === "charity"}
-                    onChange={() => this.props.handleInputChange("role", "charity")}
+                    name="Charity"
+                    checked={this.props.role === "Charity"}
+                    onChange={() => this.props.handleInputChange("role", "Charity")}
                     className="input"
                 />
                 <br />
                 <br />
-                {/* {specific} */}
+
+                {additionalInfo}
+
                 <button className="button" onClick={() => this.props.sign("up")}>
                     Sign Up
                 </button>
@@ -108,7 +167,6 @@ class SignUp extends React.Component {
                 </Link>
             </div>
         );
-        return <div>{form}</div>;
     }
 }
 

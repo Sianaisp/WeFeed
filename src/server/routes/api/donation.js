@@ -48,9 +48,9 @@ router.post("/create", (req, res, next) => {
         designated_charities
     })
         .save()
-        .then(event => {
-            file.mv(`public/images/${event._id}.jpg`, function(err) {
-                console.log("event created,pic uploaded, pic name: " + req.params.id);
+        .then(donation => {
+            file.mv(`public/images/${donation._id}.jpg`, function(err) {
+                console.log("donation created,pic uploaded, pic name: " + req.params.id);
                 res.redirect("/dashboard");
             });
 
