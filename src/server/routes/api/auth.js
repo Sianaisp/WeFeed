@@ -37,7 +37,9 @@ router.post("/sign-up", (req, res) => {
                 {
                     _id: user._id,
                     email: user.email,
-                    profilePicture: user.profilePicture
+                    profilePicture: user.profilePicture,
+                    role: user.role,
+                    username: user.username
                 },
                 config.SECRET_JWT_PASSPHRASE
             );

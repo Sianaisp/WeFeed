@@ -1,27 +1,29 @@
-import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
-import { withRouter } from 'react-router'
+import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
+import { withRouter } from "react-router";
 
-import api from '../utils/api'
+import api from "../utils/api";
 
-import SignUp from './SignUp'
-import Logout from './Logout'
-import SignIn from './SignIn'
-import NotFound from '../NotFound'
+import SignUp from "./SignUp";
+import Logout from "./Logout";
+import SignIn from "./SignIn";
+import NotFound from "../NotFound";
 
 class Auth extends Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
-            email: '',
-            password: '',
+            email: "",
+            password: "",
             picture: undefined,
-            error: '',
-        }
+            error: "",
+            username: "",
+            role: "volunteer"
+        };
 
-        this._handleInputChange = this._handleInputChange.bind(this)
-        this._sign = this._sign.bind(this)
+        this._handleInputChange = this._handleInputChange.bind(this);
+        this._sign = this._sign.bind(this);
     }
 
     render() {
@@ -35,6 +37,8 @@ class Auth extends Component {
                             handleInputChange={this._handleInputChange}
                             email={this.state.email}
                             password={this.state.password}
+                            role={this.state.role}
+                            username={this.state.username}
                             error={this.state.error}
                             sign={this._sign}
                         />
@@ -60,38 +64,43 @@ class Auth extends Component {
                 />
                 <Route component={NotFound} />
             </Switch>
-        )
+        );
     }
 
     _handleInputChange(key, newValue) {
         this.setState({
-            [key]: newValue,
-        })
+            [key]: newValue
+        });
     }
 
     _sign(type) {
         this.setState({
-            error: '',
-        })
+            error: ""
+        });
 
-        const pictureDeclaration = type === 'up' && { picture: this.state.picture }
+        const pictureDeclaration = type === "up" && { picture: this.state.picture };
 
         api.post(
             `/api/auth/sign-${type}`,
-            { email: this.state.email, password: this.state.password },
+            {
+                email: this.state.email,
+                password: this.state.password,
+                username: this.state.username,
+                role: this.state.role
+            },
             pictureDeclaration
         )
             .then(data => {
-                localStorage.setItem('identity', data.token)
-                this.props.setUser()
-                this.props.history.push('/')
+                localStorage.setItem("identity", data.token);
+                this.props.setUser();
+                this.props.history.push("/");
             })
             .catch(err => {
                 this.setState({
-                    error: err.description,
-                })
-            })
+                    error: err.description
+                });
+            });
     }
 }
 
-export default withRouter(Auth)
+export default withRouter(Auth);

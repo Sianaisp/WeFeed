@@ -37,14 +37,14 @@ router.get("/donator_profile", (req, res, next) => {
     res.render("donator_profile", { user: req.user });
 });
 
-router.get("/profile", (req, res, next) => {
-    if (req.user.role === "Volunteer") {
-        res.render("volunteer_profile", { user: req.user });
-    } else if (req.user.role === "Donator") {
-        res.render("donator_profile", { user: req.user });
-    } else if (req.user.role === "Charity") {
-        res.render("charity_profile", { user: req.user });
-    }
-});
+// router.get("/profile", (req, res, next) => {
+//     if (req.user.role === "Volunteer") {
+//         res.render("volunteer_profile", { user: req.user });
+//     } else if (req.user.role === "Donator") {
+//         res.render("donator_profile", { user: req.user });
+//     } else if (req.user.role === "Charity") {
+//         res.render("charity_profile", { user: req.user });
+//     }
+// });
 
 module.exports = router;
