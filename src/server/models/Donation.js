@@ -11,7 +11,13 @@ const donationSchema = new Schema({
     pick_up_date: { type: Date },
     cooked: { type: String },
     special_instructions: { type: String },
-    designated_charities: { type: String }
+    designated_charities: { type: String },
+    lat: {
+        type: Number
+    },
+    lng: {
+        type: Number
+    }
 });
 
 module.exports = mongoose.model("Donation", donationSchema);

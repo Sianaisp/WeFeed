@@ -70,7 +70,8 @@ class Donate extends Component {
         });
     }
 
-    _postdonation() {
+    _postdonation(latlng) {
+        console.log("latlng from index: ", latlng);
         this.setState({
             error: ""
         });
@@ -86,13 +87,15 @@ class Donate extends Component {
                 special_instructions: this.state.special_instructions,
                 designated_charities: this.designated_charities,
                 city: this.state.city,
-                address: this.state.address
+                address: this.state.address,
+                lat: latlng.lat,
+                lng: latlng.lng
             },
             pictureDeclaration
         )
 
             .then(data => {
-                console.log("DONATION RESPONSE", data);
+                console.log("DONATION RESPONSE: ", data);
 
                 this.props.history.push("/");
             })

@@ -14,6 +14,9 @@ export class Map extends Component {
     };
 
     render() {
+        // console.log(data);
+        // this.state.donation.map(e => <Text>{e.this.state.donation}</Text>);
+
         return (
             // Important! Always set the container height explicitly
             <div style={{ height: "80vh", width: "80%" }}>
@@ -24,6 +27,7 @@ export class Map extends Component {
                     defaultZoom={this.props.zoom}
                 >
                     <AnyReactComponent lat={59.955413} lng={30.337844} text={"Berlin"} />
+
                     <CircleMarker
                         lat={52.5063688}
                         lng={13.3711224}
@@ -32,7 +36,6 @@ export class Map extends Component {
                     >
                         Donation 1
                     </CircleMarker>
-
                     <CircleMarker lat={52.47} lng={13.4} borderColor="blue">
                         Donation 2
                     </CircleMarker>
@@ -40,6 +43,8 @@ export class Map extends Component {
             </div>
         );
     }
+
+    // this.state.donation.map
 }
 
 export default Map;

@@ -32,6 +32,7 @@ class PostDonation extends React.Component {
             lat: latLng.lat,
             lng: latLng.lng
         });
+        console.log("state: ", this.state);
     }
 
     render() {
@@ -136,7 +137,7 @@ class PostDonation extends React.Component {
                     placeholder="Any preference in charities?"
                 />
                 <br />
-                <button className="button" onClick={() => this.props.postdonation()}>
+                <button className="button" onClick={() => this.props.postdonation(this.state)}>
                     Post
                 </button>
             </div>

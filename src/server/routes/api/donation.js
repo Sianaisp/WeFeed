@@ -15,7 +15,9 @@ router.post("/", (req, res) => {
         cooked,
         city,
         special_instructions,
-        designated_charities
+        designated_charities,
+        lat,
+        lng
     } = req.body;
 
     new Donation({
@@ -27,10 +29,13 @@ router.post("/", (req, res) => {
         city,
         cooked,
         special_instructions,
-        designated_charities
+        designated_charities,
+        lat,
+        lng
     })
         .save()
         .then(donation => {
+            console.log("donation back end: ", donation);
             res.send(donation);
         })
         .catch(error => {
