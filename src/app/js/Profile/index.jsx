@@ -18,6 +18,21 @@ class Profile extends Component {
                     {this.props.user.availability}
                 </div>
             );
+        } else if (this.props.user.role === "Charity") {
+            additional = (
+                <div>
+                    Your preferred type of food is :<br />
+                    {this.props.user.cuisine}
+                </div>
+            );
+        } else if (this.props.user.role === "Donator") {
+            additional = (
+                <div>
+                    What type of donator are you?
+                    <br />
+                    {this.props.user.category}
+                </div>
+            );
         }
         return (
             <div className="container">

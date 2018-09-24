@@ -52,13 +52,20 @@ class SignUp extends React.Component {
         } else if (this.props.role === "Donator") {
             additionalInfo = (
                 <div>
-                    <input
-                        type="text"
-                        value={this.props.category}
+                    {" "}
+                    What kind of Donator are you?
+                    <select
+                        value={this.props.value}
                         onChange={evt => this.props.handleInputChange("category", evt.target.value)}
-                        className="input"
-                        placeholder="Category"
-                    />
+                    >
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Grocery Store">Grocery Store</option>
+                        <option value="Farm">Farm</option>
+                        <option value="Cafetaria">Cafetaria</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Events">Events</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
             );
         }

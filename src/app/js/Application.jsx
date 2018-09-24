@@ -7,9 +7,11 @@ import Auth from "./Auth";
 import Home from "./Home";
 import Navigation from "./Navigation";
 import Profile from "./Profile";
-import Map from "./Map/Map";
+
 import NotFound from "./NotFound";
 import api from "./utils/api";
+import PostDonation from "./Donation";
+import Map from "./Map/Map";
 
 class Application extends React.Component {
     constructor(props) {
@@ -35,12 +37,12 @@ class Application extends React.Component {
                     <Switch>
                         <Route exact path="/" render={() => <Home user={this.state.user} />} />
                         <Route exact path="/profile" render={() => <Profile user={this.state.user} />} />
-                        <Route exact path="/map" render={() => <Map user={this.state.user} />} />
-
                         <Route
                             path="/auth"
                             render={() => <Auth setUser={this._setUser} resetUser={this._resetUser} />}
                         />
+                        <Route path="/donation" render={() => <PostDonation user={this.state.user} />} />
+                        <Route path="/map" component={Map} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>
