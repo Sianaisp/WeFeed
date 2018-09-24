@@ -7,11 +7,12 @@ const Donation = require("../../models/Donation");
 
 router.post("/", (req, res) => {
     const {
+        donationtitle,
         food,
-        value,
+        foodvalue,
         address,
         pick_up_date,
-        picture,
+        venuename,
         cooked,
         city,
         special_instructions,
@@ -21,11 +22,12 @@ router.post("/", (req, res) => {
     } = req.body;
 
     new Donation({
+        donationtitle,
         food,
-        value,
+        foodvalue,
         address,
         pick_up_date,
-        picture,
+        venuename,
         city,
         cooked,
         special_instructions,
@@ -41,6 +43,12 @@ router.post("/", (req, res) => {
         .catch(error => {
             console.log(error);
         });
+});
+
+router.get("/", (req, res) => {
+    Donation.find().then(donations => {
+        res.send(donations);
+    });
 });
 
 module.exports = router;

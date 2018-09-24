@@ -13,16 +13,16 @@ class Donate extends Component {
         super(props);
 
         this.state = {
-            foodtitle: "",
+            donationtitle: "",
             food: "",
-            picture: undefined,
             foodvalue: "",
             address: "",
             city: "",
             pick_up_date: moment(),
             cooked: "",
             designated_charities: "",
-            special_instructions: ""
+            special_instructions: "",
+            venuename: ""
         };
 
         this._handleInputChange = this._handleInputChange.bind(this);
@@ -41,13 +41,13 @@ class Donate extends Component {
                             isidore={this._isidore}
                             handleInputChange={this._handleInputChange}
                             postdonation={this._postdonation}
-                            foodtitle={this.state.foodtitle}
+                            venuename={this.state.venuename}
+                            donationtitle={this.state.donationtitle}
                             food={this.state.food}
                             foodvalue={this.state.foodvalue}
                             address={this.state.address}
                             city={this.state.city}
                             pick_up_date={this.state.pick_up_date}
-                            pick_up_date={this.state.pick_up_time}
                             cooked={this.state.cooked}
                             designated_charities={this.state.designated_charities}
                             special_instructions={this.state.special_instructions}
@@ -70,8 +70,8 @@ class Donate extends Component {
         });
     }
 
-    _postdonation(latlng) {
-        console.log("latlng from index: ", latlng);
+    _postdonation(latLng) {
+        console.log("latlng from index: ", latLng);
         this.setState({
             error: ""
         });
@@ -79,17 +79,18 @@ class Donate extends Component {
         api.post(
             `/api/donation`,
             {
-                foodtitle: this.state.foodtitle,
+                donationtitle: this.state.donationtitle,
                 food: this.state.food,
+                venuename: this.state.venuename,
                 foodvalue: this.state.foodvalue,
                 pick_up_date: this.state.pick_up_date,
                 cooked: this.state.cooked,
                 special_instructions: this.state.special_instructions,
-                designated_charities: this.designated_charities,
+                designated_charities: this.state.designated_charities,
                 city: this.state.city,
                 address: this.state.address,
-                lat: latlng.lat,
-                lng: latlng.lng
+                lat: latLng.lat,
+                lng: latLng.lng
             },
             pictureDeclaration
         )
@@ -97,7 +98,7 @@ class Donate extends Component {
             .then(data => {
                 console.log("DONATION RESPONSE: ", data);
 
-                this.props.history.push("/");
+                this.props.history.push("/donation-list");
             })
             .catch(err => {
                 this.setState({

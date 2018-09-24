@@ -11,7 +11,7 @@ import Profile from "./Profile";
 import NotFound from "./NotFound";
 import api from "./utils/api";
 import PostDonation from "./Donation";
-import Map from "./Map/Map";
+import DonationList from "./DonationList";
 
 class Application extends React.Component {
     constructor(props) {
@@ -42,7 +42,7 @@ class Application extends React.Component {
                             render={() => <Auth setUser={this._setUser} resetUser={this._resetUser} />}
                         />
                         <Route path="/donation" render={() => <PostDonation user={this.state.user} />} />
-                        <Route path="/map" component={Map} />
+                        <Route path="/donation-list" component={DonationList} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>

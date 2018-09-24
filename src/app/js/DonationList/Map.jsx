@@ -6,6 +6,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export class Map extends Component {
     static defaultProps = {
+        donations: [],
         center: {
             lat: 52.5,
             lng: 13.4
@@ -13,9 +14,11 @@ export class Map extends Component {
         zoom: 11
     };
 
+    // componentDidMount() {
+
     render() {
-        // console.log(data);
-        // this.state.donation.map(e => <Text>{e.this.state.donation}</Text>);
+        // let click;
+        // click = <div>{donation.food}</div>;
 
         return (
             // Important! Always set the container height explicitly
@@ -27,24 +30,22 @@ export class Map extends Component {
                     defaultZoom={this.props.zoom}
                 >
                     <AnyReactComponent lat={59.955413} lng={30.337844} text={"Berlin"} />
-
-                    <CircleMarker
-                        lat={52.5063688}
-                        lng={13.3711224}
-                        onClick={e => console.log("click")}
-                        onMouseLeave={e => console.log("mouseLeave")}
-                    >
-                        Donation 1
-                    </CircleMarker>
-                    <CircleMarker lat={52.47} lng={13.4} borderColor="blue">
-                        Donation 2
-                    </CircleMarker>
+                    {this.props.donations.map(donation => {
+                        return (
+                            <CircleMarker
+                                lat={donation.lat}
+                                lng={donation.lng}
+                                onClick={e => console.log("CLICK")}
+                                onMouseLeave={e => console.log("mouseLeave")}
+                            >
+                                {donation.food}
+                            </CircleMarker>
+                        );
+                    })}
                 </GoogleMapReact>
             </div>
         );
     }
-
-    // this.state.donation.map
 }
 
 export default Map;

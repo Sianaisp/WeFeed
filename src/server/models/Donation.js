@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const donationSchema = new Schema({
     donationtitle: { type: String },
     food: { type: String },
-    picture: { type: String },
     foodvalue: { type: String },
     address: { type: String },
     city: { type: String },
@@ -17,7 +16,8 @@ const donationSchema = new Schema({
     },
     lng: {
         type: Number
-    }
+    },
+    venuename: { type: String }
 });
 
 module.exports = mongoose.model("Donation", donationSchema);

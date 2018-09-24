@@ -17,8 +17,9 @@ class PostDonation extends React.Component {
         this.handleSelect = this.handleSelect.bind(this);
     }
     componentDidMount() {
-        this.props.handleInputChange("foodtitle", "");
+        this.props.handleInputChange("donationtitle", "");
         this.props.handleInputChange("food", "");
+        this.props.handleInputChange("venuename", "");
         this.props.handleInputChange("foodvalue", "");
         this.props.handleInputChange("address", "");
         this.props.handleInputChange("city", "");
@@ -41,18 +42,18 @@ class PostDonation extends React.Component {
                 <h1>Make a donation:</h1>
                 <input
                     type="text"
-                    value={this.props.foodtitle}
-                    onChange={evt => this.props.handleInputChange("foodtitle", evt.target.value)}
+                    value={this.props.venuename}
+                    onChange={evt => this.props.handleInputChange("venuename", evt.target.value)}
                     className="input"
-                    placeholder="Title"
+                    placeholder="Name of your venue"
                 />
                 <br />
                 <input
-                    type="file"
-                    value={this.props.picture}
-                    onChange={evt => this.props.handleInputChange("picture", evt.target.files[0])}
+                    type="text"
+                    value={this.props.donationtitle}
+                    onChange={evt => this.props.handleInputChange("donationtitle", evt.target.value)}
                     className="input"
-                    placeholder="Profile Picture"
+                    placeholder="Title of your donation"
                 />
                 <br />
                 <input
@@ -77,7 +78,7 @@ class PostDonation extends React.Component {
                     <LocationSearchInput
                         value={this.props.address}
                         onSelect={this.handleSelect}
-                        onChange={evt => this.props.handleInputChange("address", evt.target.value)}
+                        onChange={value => this.props.handleInputChange("address", value)}
                         className="input"
                         placeholder="Address"
                     />
@@ -150,11 +151,14 @@ export default PostDonation;
 class LocationSearchInput extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { address: "" };
+        this.state = {
+            address: ""
+        };
     }
 
     handleChange = address => {
         this.setState({ address });
+        this.props.onChange(address);
     };
 
     handleSelect = address => {
