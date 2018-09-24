@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
+import moment from "moment";
 
 import api from "../utils/api";
 
@@ -18,8 +19,7 @@ class Donate extends Component {
             foodvalue: "",
             address: "",
             city: "",
-            pick_up_date: "",
-            pick_up_time: "",
+            pick_up_date: moment(),
             cooked: "",
             designated_charities: "",
             special_instructions: ""
@@ -92,8 +92,8 @@ class Donate extends Component {
         )
 
             .then(data => {
-                // localStorage.setItem("identity", data.token);
-                this.props.setUser();
+                console.log("DONATION RESPONSE", data);
+
                 this.props.history.push("/");
             })
             .catch(err => {

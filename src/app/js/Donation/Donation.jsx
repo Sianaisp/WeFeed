@@ -1,4 +1,6 @@
 import React from "react";
+import Datepicker from "react-datepicker";
+import moment from "moment";
 import PlacesAutocomplete, {
     geocodeByAddress,
     // geocodeByPlaceId,
@@ -20,8 +22,7 @@ class PostDonation extends React.Component {
         this.props.handleInputChange("foodvalue", "");
         this.props.handleInputChange("address", "");
         this.props.handleInputChange("city", "");
-        this.props.handleInputChange("pick_up_date", "");
-        this.props.handleInputChange("pick_up_time", "");
+        this.props.handleInputChange("pick_up_date", moment());
         this.props.handleInputChange("cooked", "");
         this.props.handleInputChange("designated_charities", "");
         this.props.handleInputChange("special_instructions", "");
@@ -76,16 +77,17 @@ class PostDonation extends React.Component {
                         value={this.props.address}
                         onSelect={this.handleSelect}
                         onChange={evt => this.props.handleInputChange("address", evt.target.value)}
+                        className="input"
                         placeholder="Address"
                     />
                 </div>
-                <input
+                {/* <input
                     type="text"
                     value={this.props.address}
                     onChange={evt => this.props.handleInputChange("address", evt.target.value)}
                     className="input"
                     placeholder="Address"
-                />
+                /> */}
                 <br />
                 <input
                     type="text"
@@ -96,21 +98,14 @@ class PostDonation extends React.Component {
                 />
                 <br />
                 <div> Date:</div>
-                <input
-                    type="date"
-                    value={this.props.pick_up_date}
-                    onChange={evt => this.props.handleInputChange("pick_up_date", evt.target.value)}
-                    className="input"
-                    placeholder="Pick up date "
-                />
-                <br />
-                <div> Time:</div>
-                <input
-                    type="time"
-                    value={this.props.pick_up_time}
-                    onChange={evt => this.props.handleInputChange("pick_up_time", evt.target.value)}
-                    className="input"
-                    placeholder="Pick up time"
+                <Datepicker
+                    selected={this.props.pick_up_date}
+                    onChange={newValue => this.props.handleInputChange("pick_up_date", newValue)}
+                    showTimeSelect
+                    timeFormat="HH:mm"
+                    timeIntervals={15}
+                    dateFormat="LLL"
+                    timeCaption="time"
                 />
                 <br />
                 <input

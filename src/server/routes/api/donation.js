@@ -30,8 +30,8 @@ router.post("/", (req, res) => {
         designated_charities
     })
         .save()
-        .then(() => {
-            res.redirect("/");
+        .then(donation => {
+            res.send(donation);
         })
         .catch(error => {
             console.log(error);
