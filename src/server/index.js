@@ -13,9 +13,11 @@ const config = require("./config");
 
 const apiRoutes = require("./routes/api");
 const appRoutes = require("./routes/app");
+require("dotenv").config();
 
+// mongoose.connect(process.env.MONGODB_URI);
 mongoose.connect(
-    config.MONGODB_URI,
+    process.env.MONGODB_URI,
     { useNewUrlParser: true }
 );
 

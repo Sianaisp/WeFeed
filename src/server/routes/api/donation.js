@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
     })
         .save()
         .then(() => {
-            res.redirect("../");
+            res.redirect("/");
         })
         .catch(error => {
             console.log(error);
