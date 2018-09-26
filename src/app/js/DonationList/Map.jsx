@@ -13,8 +13,10 @@ export class Map extends Component {
         },
         zoom: 13
     };
-    clickMarker = () => {
-        console.log("ss");
+    clickMarker = e => {
+        (e.target.style.fontSize = "20px"),
+            (e.target.style.height = "80px"),
+            (e.target.style.width = "80px");
     };
 
     // componentDidMount() {
@@ -42,6 +44,8 @@ export class Map extends Component {
                                 onMouseLeave={e => console.log("mouseLeave")}
                             >
                                 {donation.donationtitle}
+                                <br />
+                                {donation.venuename}
                             </CircleMarker>
                         );
                     })}

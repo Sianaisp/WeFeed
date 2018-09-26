@@ -43,8 +43,10 @@ class Home extends React.Component {
                                 <img src="/images/vol1.jpg" alt="Food" height="250px" width="250px" />
                                 <p className="voltext">
                                     {" "}
-                                    Thank you for applying to be a volunteer with us. We will send your
-                                    information to all the charities in your area.{" "}
+                                    Thank you for applying to be a volunteer with us. We have recorded
+                                    your information and will send it to all the charities in your area.
+                                    You will be contacted soon.
+                                    <br /> Thank you for your participation!{" "}
                                 </p>
                                 <Link to="/donation-list">
                                     <button className="buttondonations" type="button">
@@ -57,14 +59,15 @@ class Home extends React.Component {
                 );
             } else if (this.props.user.role === "Donator") {
                 specific = (
-                    <body background="/images/straw2.jpg">
+                    <body background="/images/straw3.jpg">
                         <div className="card-container">
                             <div className="donator">
                                 <img src="/images/food4.jpg" alt="Food" height="250px" />
                                 <h1> Hi {this.props.user.username} </h1>
                                 <div className="donatext">
                                     Thank you for taking part in WeFeed. <br />
-                                    You have extra food and would like to send it to charities?
+                                    You have extra food and would like to send it to charities. Please
+                                    make your donation below!
                                     <br />
                                     <br />
                                 </div>

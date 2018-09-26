@@ -10,36 +10,36 @@ class List extends Component {
                         <div className="list-group" key={donation._id}>
                             <div className="listfood">
                                 <h2 className="donationtitle">{donation.donationtitle}</h2>
-                                <b>What type of food is it?</b>
-                                <br />
+                                <b className="green">What type of food is it?&ensp;</b>
+
                                 {donation.food}
                                 <br />
-                                <b>Estimated value of the food:</b>
-                                <br />
+                                <b className="green">Estimated value of the food:&ensp;</b>
+
                                 {donation.foodvalue}
                                 <br />
-                                <b>Venue name:</b>
-                                <br />
+                                <b className="green">Venue name:&ensp;</b>
+
                                 {donation.venuename}
                                 <br />
-                                <b>Address:</b>
-                                <br />
+                                <b className="green">Address:&ensp;</b>
+
                                 {donation.address}
                                 <br />
-                                <b>Is the food already prepared?</b>
-                                <br />
+                                <b className="green">Is the food already prepared?&ensp;</b>
+
                                 {donation.cooked}
                                 <br />
-                                <b>When is the pick up?</b>
-                                <br />
+                                <b className="green">When is the pick up?&ensp;</b>
+
                                 {donation.pick_up_date}
                                 <br />
-                                <b>Charity preferences:</b>
-                                <br />
+                                <b className="green">Charity preferences:&ensp;</b>
+
                                 {donation.designated_charities}
                                 <br />
-                                <b>Special Instructions:</b>
-                                <br />
+                                <b className="green">Special Instructions:&ensp;</b>
+
                                 {donation.special_instructions}
                             </div>
                         </div>
