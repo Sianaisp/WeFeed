@@ -26,7 +26,7 @@ class PostDonation extends React.Component {
         this.props.handleInputChange("venuename", "");
         this.props.handleInputChange("foodvalue", "");
         this.props.handleInputChange("address", "");
-        this.props.handleInputChange("city", "");
+
         this.props.handleInputChange("pick_up_date", moment());
         this.props.handleInputChange("cooked", "");
         this.props.handleInputChange("designated_charities", "");
@@ -42,111 +42,109 @@ class PostDonation extends React.Component {
 
     render() {
         return (
-            <div className="centerform">
-                <h1>Make a donation:</h1>
-                <input
-                    type="text"
-                    value={this.props.venuename}
-                    onChange={evt => this.props.handleInputChange("venuename", evt.target.value)}
-                    className="input"
-                    placeholder="Name of your venue"
-                />
-                <br />
-                <input
-                    type="text"
-                    value={this.props.donationtitle}
-                    onChange={evt => this.props.handleInputChange("donationtitle", evt.target.value)}
-                    className="input"
-                    placeholder="Title of your donation"
-                />
-                <br />
-                <input
-                    type="text"
-                    value={this.props.food}
-                    onChange={evt => this.props.handleInputChange("food", evt.target.value)}
-                    className="input"
-                    placeholder="What kind of food is it?"
-                />
-                <br />
-                <input
-                    type="text"
-                    value={this.props.foodvalue}
-                    onChange={evt => this.props.handleInputChange("foodvalue", evt.target.value)}
-                    className="input"
-                    placeholder="Estimated value of the food?"
-                />
-                <br />{" "}
-                <div>
-                    {" "}
-                    Address:
-                    <br />
-                    <LocationSearchInput
-                        value={this.props.address}
-                        onSelect={this.handleSelect}
-                        onChange={value => this.props.handleInputChange("address", value)}
-                        className="input "
-                        placeholder="Address"
-                    />
-                </div>
-                {/* <input
+            <body className="ice">
+                <div className="card-container">
+                    <div className="centerform donationcard">
+                        <h1>Make a donation:</h1>
+                        <input
+                            type="text"
+                            value={this.props.venuename}
+                            onChange={evt => this.props.handleInputChange("venuename", evt.target.value)}
+                            className="input"
+                            placeholder="Name of your venue"
+                        />
+                        <br />
+                        <input
+                            type="text"
+                            value={this.props.donationtitle}
+                            onChange={evt =>
+                                this.props.handleInputChange("donationtitle", evt.target.value)
+                            }
+                            className="input"
+                            placeholder="Title of your donation"
+                        />
+                        <br />
+                        <input
+                            type="text"
+                            value={this.props.food}
+                            onChange={evt => this.props.handleInputChange("food", evt.target.value)}
+                            className="input"
+                            placeholder="What kind of food is it?"
+                        />
+                        <br />
+                        <input
+                            type="text"
+                            value={this.props.foodvalue}
+                            onChange={evt => this.props.handleInputChange("foodvalue", evt.target.value)}
+                            className="input"
+                            placeholder="Estimated value of the food?"
+                        />
+                        <br />{" "}
+                        <div>
+                            {" "}
+                            Address:
+                            <br />
+                            <LocationSearchInput
+                                value={this.props.address}
+                                onSelect={this.handleSelect}
+                                onChange={value => this.props.handleInputChange("address", value)}
+                                className="input "
+                                placeholder="Address"
+                            />
+                        </div>
+                        {/* <input
                     type="text"
                     value={this.props.address}
                     onChange={evt => this.props.handleInputChange("address", evt.target.value)}
                     className="input"
                     placeholder="Address"
                 /> */}
-                <br />
-                <input
-                    type="text"
-                    value={this.props.city}
-                    onChange={evt => this.props.handleInputChange("city", evt.target.value)}
-                    className="input"
-                    placeholder="City"
-                />
-                <br />
-                <div> Date:</div>
-                <DatePicker
-                    selected={this.props.pick_up_date}
-                    onChange={newValue => this.props.handleInputChange("pick_up_date", newValue)}
-                    showTimeSelect
-                    timeFormat="HH:mm"
-                    timeIntervals={15}
-                    dateFormat="LLL"
-                    timeCaption="time"
-                />
-                <br />
-                <input
-                    type="text"
-                    value={this.props.cooked}
-                    onChange={evt => this.props.handleInputChange("cooked", evt.target.value)}
-                    className="input"
-                    placeholder="Is it cooked food?"
-                />
-                <br />
-                <input
-                    type="text"
-                    value={this.props.special_instructions}
-                    onChange={evt =>
-                        this.props.handleInputChange("special_instructions", evt.target.value)
-                    }
-                    className="input"
-                    placeholder="Any special instructions?"
-                />
-                <br />
-                <input
-                    type="text"
-                    value={this.props.designated_charities}
-                    onChange={evt =>
-                        this.props.handleInputChange("designated_charities", evt.target.value)
-                    }
-                    className="input"
-                    placeholder="Any preference in charities?"
-                />
-                <br />
-                <button className="button" onClick={() => this.props.postdonation(this.state)}>
-                    Post
-                </button>
-            </div>
+                        <br />
+                        <div> Date:</div>
+                        <DatePicker
+                            selected={this.props.pick_up_date}
+                            onChange={newValue => this.props.handleInputChange("pick_up_date", newValue)}
+                            showTimeSelect
+                            timeFormat="HH:mm"
+                            timeIntervals={15}
+                            dateFormat="LLL"
+                            timeCaption="time"
+                        />
+                        <br />
+                        <input
+                            type="text"
+                            value={this.props.cooked}
+                            onChange={evt => this.props.handleInputChange("cooked", evt.target.value)}
+                            className="input"
+                            placeholder="Is it cooked food?"
+                        />
+                        <br />
+                        <input
+                            type="text"
+                            value={this.props.special_instructions}
+                            onChange={evt =>
+                                this.props.handleInputChange("special_instructions", evt.target.value)
+                            }
+                            className="input"
+                            placeholder="Any special instructions?"
+                        />
+                        <br />
+                        <input
+                            type="text"
+                            value={this.props.designated_charities}
+                            onChange={evt =>
+                                this.props.handleInputChange("designated_charities", evt.target.value)
+                            }
+                            className="input"
+                            placeholder="Any preference in charities?"
+                        />
+                        <br />
+                        <button className="button" onClick={() => this.props.postdonation(this.state)}>
+                            Post
+                        </button>
+                    </div>
+                </div>
+            </body>
         );
     }
 }

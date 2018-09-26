@@ -13,10 +13,16 @@ export class Map extends Component {
         },
         zoom: 13
     };
+    clickMarker = () => {
+        console.log("ss");
+    };
 
     // componentDidMount() {
 
     render() {
+        let style = {
+            width: "100px"
+        };
         return (
             // Important! Always set the container height explicitly
             <div style={{ height: "80vh", width: "80%" }}>
@@ -32,7 +38,7 @@ export class Map extends Component {
                             <CircleMarker
                                 lat={donation.lat}
                                 lng={donation.lng}
-                                onClick={e => console.log("CLICK")}
+                                onClick={this.clickMarker}
                                 onMouseLeave={e => console.log("mouseLeave")}
                             >
                                 {donation.donationtitle}

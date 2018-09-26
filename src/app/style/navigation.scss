@@ -89,6 +89,17 @@
     border-radius: 4px;
     padding: 30px 0px 20px;
 }
+
+.donationcard {
+    box-shadow: 5px 5px 9px 0 rgba(0, 0, 0, 0.2);
+    width: 350px;
+    color: black;
+    text-align: center;
+    background-color: white;
+    border-radius: 4px;
+    padding: 30px 0px 20px;
+}
+
 .profilepic {
     border-radius: 50%;
     height: 180px;
@@ -229,4 +240,14 @@ hr {
     width: 70%;
     align-content: center;
     margin-left: 70px;
+}
+
+.ice {
+    background-image: url("../../server/public/images/ice.jpg");
+    background-repeat: repeat;
+}
+
+.bananas {
+    background-image: url("../../server/public/images/bananas.png");
+    background-repeat: repeat;
 }

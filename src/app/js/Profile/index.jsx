@@ -38,30 +38,32 @@ class Profile extends Component {
             );
         }
         return (
-            <div className="card-container">
-                <div className="container card ">
-                    <img className="profilepic" src={this.props.user.profilePicture} alt="" />
+            <body className="bananas">
+                <div className="card-container">
+                    <div className="container card ">
+                        <img className="profilepic" src={this.props.user.profilePicture} alt="" />
 
-                    <h2> Profile</h2>
+                        <h2> Profile</h2>
 
-                    <u>Name :</u>
-                    <br />
-                    {this.props.user.username}
-                    <br />
-                    <br />
+                        <u>Name :</u>
+                        <br />
+                        {this.props.user.username}
+                        <br />
+                        <br />
 
-                    <u>Address:</u>
+                        <u>Address:</u>
 
-                    <br />
-                    {this.props.user.address}
-                    <br />
+                        <br />
+                        {this.props.user.address}
+                        <br />
 
-                    {this.props.user.city}
-                    <br />
-                    <br />
-                    {additional}
+                        {this.props.user.city}
+                        <br />
+                        <br />
+                        {additional}
+                    </div>
                 </div>
-            </div>
+            </body>
         );
     }
 }

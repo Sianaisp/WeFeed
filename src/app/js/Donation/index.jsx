@@ -19,7 +19,7 @@ class Donate extends Component {
             food: "",
             foodvalue: "",
             address: "",
-            city: "",
+
             pick_up_date: moment(),
             cooked: "",
             designated_charities: "",
@@ -47,7 +47,6 @@ class Donate extends Component {
                             food={this.state.food}
                             foodvalue={this.state.foodvalue}
                             address={this.state.address}
-                            city={this.state.city}
                             pick_up_date={this.state.pick_up_date}
                             cooked={this.state.cooked}
                             designated_charities={this.state.designated_charities}
@@ -83,7 +82,7 @@ class Donate extends Component {
                 cooked: this.state.cooked,
                 special_instructions: this.state.special_instructions,
                 designated_charities: this.state.designated_charities,
-                city: this.state.city,
+
                 address: this.state.address,
                 lat: latLng.lat,
                 lng: latLng.lng
