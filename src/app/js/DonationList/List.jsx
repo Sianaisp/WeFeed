@@ -3,38 +3,35 @@ import React, { Component } from "react";
 class List extends Component {
     render() {
         return (
-            <div>
+            <div className="list-style">
+                <div className="listtitle">Donation List </div>
                 {this.props.donations.length ? (
                     this.props.donations.map(donation => (
                         <div className="list-group" key={donation._id}>
-                            <div>
+                            <div className="listfood">
+                                <h2 className="donationtitle">{donation.donationtitle}</h2>
+                                <b>What type of food is it? </b>
+                                {donation.food}
                                 <br />
-                                <h2>{donation.donationtitle}</h2>
-                                <br />
-                                What type of food is it? {donation.food}
-                                <br />
-                                Estimated value of the food:
+                                <b>Estimated value of the food:</b>
                                 {donation.foodvalue}
                                 <br />
-                                Venue name:
+                                <b>Venue name:</b>
                                 {donation.venuename}
                                 <br />
-                                Address:
+                                <b>Address:</b>
                                 {donation.address}
                                 <br />
-                                City:
-                                {donation.city}
-                                <br />
-                                Is the food already prepared?
+                                <b>Is the food already prepared?</b>
                                 {donation.cooked}
                                 <br />
-                                When is the pick up?
+                                <b>When is the pick up?</b>
                                 {donation.pick_up_date}
                                 <br />
-                                Charity preferences:
+                                <b>Charity preferences:</b>
                                 {donation.designated_charities}
                                 <br />
-                                Special Instructions:
+                                <b>Special Instructions:</b>
                                 {donation.special_instructions}
                             </div>
                         </div>

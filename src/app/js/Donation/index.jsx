@@ -7,6 +7,8 @@ import api from "../utils/api";
 
 import PostDonation from "./Donation";
 import NotFound from "../NotFound";
+require("react-datepicker/dist/react-datepicker-cssmodules.css");
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
 class Donate extends Component {
     constructor(props) {
@@ -27,7 +29,6 @@ class Donate extends Component {
 
         this._handleInputChange = this._handleInputChange.bind(this);
         this._postdonation = this._postdonation.bind(this);
-        this._isidore = this._isidore.bind(this);
     }
 
     render() {
@@ -60,10 +61,6 @@ class Donate extends Component {
         );
     }
 
-    _isidore() {
-        console.log("help");
-    }
-
     _handleInputChange(key, newValue) {
         this.setState({
             [key]: newValue
@@ -71,7 +68,6 @@ class Donate extends Component {
     }
 
     _postdonation(latLng) {
-        console.log("latlng from index: ", latLng);
         this.setState({
             error: ""
         });

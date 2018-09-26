@@ -1,11 +1,14 @@
 import React from "react";
-import Datepicker from "react-datepicker";
-import moment from "moment";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import PlacesAutocomplete, {
     geocodeByAddress,
     // geocodeByPlaceId,
     getLatLng
 } from "react-places-autocomplete";
+import moment from "moment";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 class PostDonation extends React.Component {
     constructor(props) {
@@ -14,6 +17,7 @@ class PostDonation extends React.Component {
             lat: null,
             lng: null
         };
+
         this.handleSelect = this.handleSelect.bind(this);
     }
     componentDidMount() {
@@ -28,17 +32,17 @@ class PostDonation extends React.Component {
         this.props.handleInputChange("designated_charities", "");
         this.props.handleInputChange("special_instructions", "");
     }
+
     handleSelect(latLng) {
         this.setState({
             lat: latLng.lat,
             lng: latLng.lng
         });
-        console.log("state: ", this.state);
     }
 
     render() {
         return (
-            <div>
+            <div className="centerform">
                 <h1>Make a donation:</h1>
                 <input
                     type="text"
@@ -75,11 +79,12 @@ class PostDonation extends React.Component {
                 <div>
                     {" "}
                     Address:
+                    <br />
                     <LocationSearchInput
                         value={this.props.address}
                         onSelect={this.handleSelect}
                         onChange={value => this.props.handleInputChange("address", value)}
-                        className="input"
+                        className="input "
                         placeholder="Address"
                     />
                 </div>
@@ -100,7 +105,7 @@ class PostDonation extends React.Component {
                 />
                 <br />
                 <div> Date:</div>
-                <Datepicker
+                <DatePicker
                     selected={this.props.pick_up_date}
                     onChange={newValue => this.props.handleInputChange("pick_up_date", newValue)}
                     showTimeSelect
@@ -180,7 +185,7 @@ class LocationSearchInput extends React.Component {
                         <input
                             {...getInputProps({
                                 placeholder: "Search Places ...",
-                                className: "location-search-input"
+                                className: "location-search-input "
                             })}
                         />
                         <div className="autocomplete-dropdown-container">

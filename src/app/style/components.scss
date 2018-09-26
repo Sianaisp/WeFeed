@@ -1,6 +1,9 @@
 .button {
     padding: 10px 15px;
     background-color: $primary-color;
+    width: 120px;
+    height: 40px;
+    font-size: 18px;
     color: #fff;
     transition: 250ms all ease-in-out;
     border: none;
@@ -43,16 +46,17 @@
     display: block;
     width: 100%;
     height: 1px;
-    margin: 15px 0;
+    margin: 10px 0;
     background-color: $grey;
     border: none;
     outline: none;
-}
+} //
 
 .link {
     color: $primary-color;
     text-decoration: none;
     transition: 250ms all ease-in-out;
+    margin-right: 20px;
 
     &:visited {
         color: $primary-color;

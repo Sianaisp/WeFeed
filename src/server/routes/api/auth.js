@@ -19,7 +19,6 @@ router.post("/sign-up", (req, res) => {
         availability,
         category
     } = req.body;
-    console.log("req.body:", req.body);
 
     if (!email || !password) res.status(400).send({ error: "Missing Credentials." });
 

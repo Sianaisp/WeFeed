@@ -33,8 +33,14 @@ export default class DonationList extends React.Component {
         }
         return (
             <div>
-                <Map donations={this.state.donations} />
-                <List donations={this.state.donations} />
+                <div className="map-page">
+                    <div className="map">
+                        <Map donations={this.state.donations} />{" "}
+                    </div>
+                    <div className="list-items">
+                        <List donations={this.state.donations} />
+                    </div>
+                </div>
             </div>
         );
     }

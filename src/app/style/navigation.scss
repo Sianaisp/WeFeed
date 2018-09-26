@@ -1,10 +1,13 @@
 .navigation {
-    background-color: $primary-color;
+    background-color: #339966;
+    height: 100px;
+    padding-top: 10px;
 }
 
 .nav-content {
     display: flex;
     justify-content: space-between;
+    margin-left: 30px;
 }
 
 .nav-link {
@@ -17,4 +20,202 @@
     &:hover {
         color: #fff;
     }
+}
+
+.project {
+    color: white;
+    font-size: 60px;
+    font-family: "Ribeye Marrow", cursive;
+}
+.signuptitle {
+    font-size: 30px;
+    font-family: "Ribeye Marrow", cursive;
+}
+
+.upload {
+    width: 80px;
+    box-sizing: border-box;
+}
+
+.apple {
+    margin-left: 15px;
+}
+
+.circles {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 60px;
+    margin-left: 150px;
+}
+
+.names {
+    font-size: 40px;
+    font-family: "Ribeye Marrow", cursive;
+    color: #339966;
+}
+
+.homeprofile {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    font-size: 20px;
+    padding-right: 30px;
+}
+
+.radio {
+    margin-left: 10px;
+}
+
+.card {
+    box-shadow: 5px 5px 9px 0 rgba(0, 0, 0, 0.2);
+    width: 350px;
+    color: white;
+    text-align: center;
+    background-color: #339966;
+    border-radius: 4px;
+    padding: 30px 0px 20px;
+    margin-top: -130px;
+}
+
+.signupcard {
+    box-shadow: 5px 5px 9px 0 rgba(0, 0, 0, 0.2);
+    width: 350px;
+    color: black;
+    text-align: center;
+    background-color: white;
+    border-radius: 4px;
+    padding: 30px 0px 20px;
+}
+.profilepic {
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.couple {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.bordered {
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+.buttondonations {
+    padding: 10px 15px;
+    background-color: $primary-color;
+    width: 200px;
+    height: 80px;
+    font-size: 18px;
+    color: #fff;
+    transition: 250ms all ease-in-out;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.donator {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 500px;
+    color: #339966;
+    text-align: center;
+    background-color: white;
+    border-radius: 4px;
+    padding: 30px 0px 20px;
+    margin-top: -130px;
+}
+
+.map-page {
+    display: flex;
+    flex-direction: row;
+}
+
+.map {
+    width: 80%;
+    margin-left: 120px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.list-items {
+    margin-right: 30px;
+    width: 40%;
+    margin-top: 50px;
+}
+
+.listtitle {
+    font-size: 40px;
+    font-family: "Ribeye Marrow", cursive;
+}
+
+.list-style {
+    width: 80%;
+}
+.donationtitle {
+    color: #339966;
+}
+
+.rowitems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.backpic {
+    background-image: url("../../server/public/images/avocados.jpg");
+    background-repeat: repeat;
+}
+
+.backpicsignin {
+    background-image: url("../../server/public/images/green.jpg");
+    background-repeat: repeat;
+}
+
+.third {
+    width: 60%;
+    margin-left: 0px;
+}
+
+.presentation {
+    width: 70%;
+    align-items: center;
+    margin-left: 200px;
+    padding-top: 30px;
+}
+
+.presentation2 {
+    background-color: #fff9e6;
+}
+.moveit {
+    margin-bottom: 40px;
+}
+
+.changesize {
+    font-size: 18px;
+    padding-bottom: 40px;
+}
+
+hr {
+    height: 3px;
+    background-color: #339966;
+    color: #339966;
 }

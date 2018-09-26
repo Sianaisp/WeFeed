@@ -11,15 +11,12 @@ export class Map extends Component {
             lat: 52.5,
             lng: 13.4
         },
-        zoom: 11
+        zoom: 13
     };
 
     // componentDidMount() {
 
     render() {
-        // let click;
-        // click = <div>{donation.food}</div>;
-
         return (
             // Important! Always set the container height explicitly
             <div style={{ height: "80vh", width: "80%" }}>
@@ -27,7 +24,7 @@ export class Map extends Component {
                     id="map"
                     bootstrapURLKeys={{ key: "AIzaSyABgGifJz-Q8iS7L_dVSCMH5cBVma0IP64" }}
                     defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
+                    zoom={this.props.zoom}
                 >
                     <AnyReactComponent lat={59.955413} lng={30.337844} text={"Berlin"} />
                     {this.props.donations.map(donation => {
@@ -38,7 +35,7 @@ export class Map extends Component {
                                 onClick={e => console.log("CLICK")}
                                 onMouseLeave={e => console.log("mouseLeave")}
                             >
-                                {donation.food}
+                                {donation.donationtitle}
                             </CircleMarker>
                         );
                     })}

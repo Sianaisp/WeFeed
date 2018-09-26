@@ -6,6 +6,18 @@ const Navigation = props => {
         <div className="navigation">
             <div className="container nav-content">
                 <div>
+                    <div className="project">
+                        WeFeed
+                        <img
+                            className="apple"
+                            src="/images/apple2.png"
+                            alt="Apple"
+                            height="60"
+                            width="60"
+                        />
+                    </div>
+                </div>
+                <div className="homeprofile">
                     <Link className="link nav-link" to="/">
                         Home
                     </Link>
@@ -17,8 +29,7 @@ const Navigation = props => {
                             </Link>
                         </span>
                     )}
-                </div>
-                <div>
+
                     {props.user ? (
                         <Link className="link nav-link" to="/auth/logout">
                             Logout
@@ -26,11 +37,11 @@ const Navigation = props => {
                     ) : (
                         <span>
                             <Link className="link nav-link" to="/auth/sign-in">
-                                Sign in
+                                Log in
                             </Link>
                             &nbsp; &nbsp; &nbsp;
-                            <Link className="link nav-link" to="/auth/sign-up">
-                                Sign up
+                            <Link className="link nav-link " to="/auth/sign-up">
+                                <span className="bordered"> Sign up </span>
                             </Link>
                         </span>
                     )}
