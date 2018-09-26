@@ -11,12 +11,14 @@ class Presentation extends Component {
                         </b>
                         <p className="changesize">
                             {" "}
-                            Over 1/3 of the food produced worldwide goes to waste while over 1 billion
-                            people go to bed hungry every night. <br />
-                            WeFeed is a platform that connects restaurants, cafetarias, hotels and even
-                            farms to charities so their leftover food do not go to waste. Charities can
-                            take a look at our donation map to see available food in their city and come
-                            and pick it up. We also connect volunteers to charities in order to
+                            &ensp;&ensp;&ensp; Over 1/3 of the food produced worldwide goes to waste
+                            while over 1 billion people go to bed hungry every night. While enough food
+                            is produced, the problem lies in its distribution.
+                            <br />
+                            WeFeed is a platform that aims to connect restaurants, cafetarias, hotels and
+                            even farms to charities so their leftover food do not go to waste. Charities
+                            can take a look at our donation map to see available food in their city and
+                            come and pick it up. We also connect volunteers to charities in order to
                             facilitate the deliveries.
                         </p>
                     </div>

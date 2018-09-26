@@ -66,6 +66,13 @@ class Auth extends Component {
                             password={this.state.password}
                             error={this.state.error}
                             sign={this._sign}
+                            username={this.state.username}
+                            address={this.state.address}
+                            city={this.state.city}
+                            availability={this.state.availability}
+                            car={this.state.car}
+                            category={this.state.category}
+                            cuisine={this.state.cuisine}
                         />
                     )}
                 />

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-const K_WIDTH = 30;
-const K_HEIGHT = 30;
+const K_WIDTH = 35;
+const K_HEIGHT = 35;
 
 const greatPlaceStyle = {
     // initially any map object has left top corner at lat lng coordinates

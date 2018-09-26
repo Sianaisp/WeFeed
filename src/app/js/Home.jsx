@@ -10,6 +10,7 @@ class Home extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         let specific;
 
         if (this.props.user) {
@@ -40,10 +41,10 @@ class Home extends React.Component {
                                 <h2>Welcome {this.props.user.username}</h2>
 
                                 <img src="/images/vol1.jpg" alt="Food" height="250px" width="250px" />
-                                <p>
+                                <p className="voltext">
                                     {" "}
                                     Thank you for applying to be a volunteer with us. We will send your
-                                    information to all the charities in your area. blablablabla{" "}
+                                    information to all the charities in your area.{" "}
                                 </p>
                                 <Link to="/donation-list">
                                     <button className="buttondonations" type="button">
@@ -56,25 +57,30 @@ class Home extends React.Component {
                 );
             } else if (this.props.user.role === "Donator") {
                 specific = (
-                    <div className="card-container">
-                        <div className="donator">
-                            <img src="/images/food4.jpg" alt="Food" height="250px" />
-                            <h1> Hi {this.props.user.username} </h1>
-                            Thank you for taking part blablablablablablablablabla Make a donation here:
-                            <br />
-                            <br />
-                            <Link to="/donation">
-                                <button className="buttondonations" type="button">
-                                    Make a donation
-                                </button>
-                            </Link>
-                            <Link to="/donation-list">
-                                <button className="buttondonations" type="button">
-                                    See Donations
-                                </button>
-                            </Link>
+                    <body background="/images/straw2.jpg">
+                        <div className="card-container">
+                            <div className="donator">
+                                <img src="/images/food4.jpg" alt="Food" height="250px" />
+                                <h1> Hi {this.props.user.username} </h1>
+                                <div className="donatext">
+                                    Thank you for taking part in WeFeed. <br />
+                                    You have extra food and would like to send it to charities?
+                                    <br />
+                                    <br />
+                                </div>
+                                <Link to="/donation">
+                                    <button className="buttondonations" type="button">
+                                        Make a donation
+                                    </button>
+                                </Link>
+                                <Link to="/donation-list">
+                                    <button className="buttondonations" type="button">
+                                        See Donations
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
-                    </div>
+                    </body>
                 );
             }
         } else if (this.props.user === null) {

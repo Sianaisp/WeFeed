@@ -8,6 +8,7 @@ class SignIn extends React.Component {
     }
 
     render() {
+        console.log("props", this.props);
         return (
             <body className="backpicsignin">
                 <div className="card-container">

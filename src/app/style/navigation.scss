@@ -26,6 +26,7 @@
     color: white;
     font-size: 60px;
     font-family: "Ribeye Marrow", cursive;
+    margin-left: 20px;
 }
 .signuptitle {
     font-size: 30px;
@@ -218,4 +219,14 @@ hr {
     height: 3px;
     background-color: #339966;
     color: #339966;
+}
+
+.voltext {
+    width: 70%;
+}
+
+.donatext {
+    width: 70%;
+    align-content: center;
+    margin-left: 70px;
 }

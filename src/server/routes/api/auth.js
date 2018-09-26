@@ -67,7 +67,18 @@ router.post("/sign-up", (req, res) => {
 });
 
 router.post("/sign-in", (req, res) => {
-    const { email, password } = req.body;
+    const {
+        email,
+        password,
+        role,
+        username,
+        address,
+        city,
+        car,
+        cuisine,
+        availability,
+        category
+    } = req.body;
 
     if (!email || !password) res.status(400).send({ error: "Missing Credentials." });
 
@@ -82,6 +93,14 @@ router.post("/sign-in", (req, res) => {
             {
                 _id: existingUser._id,
                 email: existingUser.email,
+                role: existingUser.role,
+                username: existingUser.username,
+                availability: existingUser.availability,
+                address: existingUser.address,
+                city: existingUser.city,
+                cuisine: existingUser.cuisine,
+                category: existingUser.category,
+                car: existingUser.car,
                 profilePicture: existingUser.profilePicture
             },
             config.SECRET_JWT_PASSPHRASE
