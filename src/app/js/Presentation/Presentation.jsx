@@ -44,7 +44,7 @@ class Presentation extends Component {
                         <p className="third">
                             {" "}
                             Do you represent a charity that brings food to the homeless or other people
-                            in need? Sign up and access our map of donations and organise a pick up.
+                            in need? Sign up to access our map of donations and organise a pick up.
                         </p>
                     </div>
                     <div className="couple">
