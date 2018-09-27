@@ -14,9 +14,11 @@ export class Map extends Component {
         zoom: 13
     };
     clickMarker = e => {
-        (e.target.style.fontSize = "20px"),
+        (e.target.style.fontSize = "12px"),
             (e.target.style.height = "80px"),
             (e.target.style.width = "80px");
+        e.target.input.value = <h1>hello</h1>;
+        console.log(e.target);
     };
 
     // componentDidMount() {

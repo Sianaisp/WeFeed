@@ -20,7 +20,7 @@ const greatPlaceStyle = {
     borderRadius: K_HEIGHT,
     backgroundColor: "green",
     color: "white",
-    fontSize: 6,
+    fontSize: 8,
     fontWeight: "bold",
     padding: 4
 };
