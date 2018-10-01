@@ -1,17 +1,17 @@
-# React + express starter template, by Lukas
+# WeFeed
 
-1. Clone or copy this repository
+1. Clone or copy this repository:
+       Go to your desktop, git clone "PASTE HERE"
 2. `npm install`
-3. Change the DB name in `src/server/config.js`
-4. `npm run dev`
-5. Go to `http://localhost:3000`
+3. `npm run dev`
+4. Go to `http://localhost:3000`
 
 -   We're using parcel.js to bundle our javascript files (as well as scss)
 -   Additionally, we use babel to transform our code
 
-## Deployment
+# Presentation
 
-This setup is ready to deploy to Heroku. Simply connect your github repository to Heroku and trigger a deployment or activate automatic deployments.
+WeFeed is a platform used to share leftover food from restaurants and hotels to homeless shelters and other charities.
 
-Do not forget to install the mlab plugin in Heroku.
-# WeFeed
+# Screenshots:
+
