@@ -15,3 +15,4 @@ WeFeed is a platform used to share leftover food from restaurants and hotels to 
 
 # Screenshots:
 
+![Screenshot1](https://github.com/Sianaisp/WeFeed/blob/master/screenshots/Screen%20Shot%202018-09-26%20at%2010.51.57.png)
