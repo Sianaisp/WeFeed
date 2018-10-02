@@ -14,6 +14,8 @@
 
 WeFeed is a platform used to share leftover food from restaurants and hotels to homeless shelters and other charities. You can sign in as a donator with leftover food, a charity who needs food or a volunteer who would like to help pick up the food for the charities.
 
+See it live here: https://wefeed-project3.herokuapp.com/
+
 # Screenshots:
 
 ![Screenshot1](https://github.com/Sianaisp/WeFeed/blob/master/screenshots/Screen%20Shot%202018-09-26%20at%2010.51.57.png)
